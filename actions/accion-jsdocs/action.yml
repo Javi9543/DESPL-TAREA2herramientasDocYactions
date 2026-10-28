@@ -15,4 +15,4 @@ runs:
 
     - name: generarDocumentacion
       shell: bash
-      run: npm install -g jsdoc
+      run: jsdoc js/ -d docs/js
