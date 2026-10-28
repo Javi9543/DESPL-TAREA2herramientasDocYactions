@@ -1,0 +1,30 @@
+name: "Crear Documentacion automaticamente"
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  generar-documentacion:
+    runs-on: ubuntu:latest
+    steps:
+    - name: descarga de repositorio
+      uses: actions/checkout@v7
+
+    - name: creacion de docs de PHP
+      uses: ./actions/accion-phpdoc
+
+    - name: creacion de docs de JS
+      uses: ./actions/accion-jsdocs
+
+    - name: creacion de docs con python
+      uses: ./actions/accion-phpdoc
+    
+    - name: añadir documentacion al repositorio
+      shell: bash
+      run: |
+        git config.username "github-actions"
+        git config.email "github-actions@github.com"
+        git add docs/
+        git commit -m "documentacion generada con exito"
+        git push

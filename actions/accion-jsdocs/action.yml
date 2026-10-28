@@ -1,0 +1,18 @@
+name: 'Generar Documentacion con Javascript'
+description: 'Genera documentacion JSdoc del codigo Javascript'
+
+runs:
+  using: composite
+  steps: 
+    - name: instalacion node.JSdoc
+      uses: action/setup-node@v4
+      with: 
+        node-version: '20'
+
+    - name: instalacion JSdoc
+      shell: bash
+      run: npm install -g jsdoc
+
+    - name: generarDocumentacion
+      shell: bash
+      run: npm install -g jsdoc

@@ -1,0 +1,20 @@
+name: 'Generacion De documentacion con PHP'
+description: 'Genera documentacion de un programa php con PHPdoc'
+
+runs: 
+  using: "composite"
+  steps:
+    - name: instalacion de php
+      uses: shivamathur/setup-php@v2
+      with:
+        php-version: '8.2'
+    
+    - name: instalar PHPDocumentor
+      shell: bash
+      run: | 
+        wget "https://phpdoc.org/phpDocumentor.phar"
+        chmod +x phpDocumentor.phar
+
+    - name: generarDocumentacion
+      shell: bash
+      run: php phpDocumentor.phar -d php/ -t docs/php
