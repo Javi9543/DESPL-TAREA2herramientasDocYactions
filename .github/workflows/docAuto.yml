@@ -6,7 +6,7 @@ on:
 
 jobs:
   generar-documentacion:
-    runs-on: ubuntu:latest
+    runs-on: ubuntu-latest
     steps:
     - name: descarga de repositorio
       uses: actions/checkout@v7
@@ -23,8 +23,8 @@ jobs:
     - name: añadir documentacion al repositorio
       shell: bash
       run: |
-        git config.username "github-actions"
-        git config.email "github-actions@github.com"
+        git config --global user.name "github-actions"
+        git config --global user.email "github-actions@github.com"
         git add docs/
         git commit -m "documentacion generada con exito"
         git push
