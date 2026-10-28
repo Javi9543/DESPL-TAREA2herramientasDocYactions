@@ -4,6 +4,9 @@ on:
   push:
   workflow_dispatch:
 
+permisions:
+  contents: write
+
 jobs:
   generar-documentacion:
     runs-on: ubuntu-latest
