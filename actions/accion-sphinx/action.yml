@@ -17,5 +17,5 @@ runs:
   - name: genera documentacion
     shell: bash
     run: |
-      sphinx apidoc -o docs/python python/
-      sphinx build -b html docs/python docs/python/html
+      sphinx-apidoc -o docs/python python/
+      sphinx-build -b html docs/python docs/python/html
