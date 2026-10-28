@@ -1,11 +1,11 @@
 name: 'Generacion De documentacion con PHP'
 description: 'Genera documentacion de un programa php con PHPdoc'
 
-runs: 
+runs:
   using: "composite"
   steps:
     - name: instalacion de php
-      uses: shivamathur/setup-php@v2
+      uses: shivammathur/setup-php@v2
       with:
         php-version: '8.2'
 
